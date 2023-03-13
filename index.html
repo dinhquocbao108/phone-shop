@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Phone-Shop</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js"
+        integrity="sha512-0qU9M9jfqPw6FKkPafM3gy2CBAvUWnYVOfNPDYKVuRTel1PrciTj+a9P3loJB+j0QmN2Y0JYQmkBBS8W+mbezg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+
+<body>
+
+    <div id="modal-loader">
+        <div class="loading-container">
+            <div class="loading"></div>
+            <div id="loading-text">loading</div>
+        </div>
+    </div>
+
+    <div class="header">
+        <div class="search">
+            <div class="form">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Tìm kiếm sản phẩm,..">
+                <button onclick="clg()">Tìm kiếm</button>
+            </div>
+        </div>
+        <button onclick="openCart()" class="btn__cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <div class="count__cart">
+                <div id="count__cart">0</div>
+            </div>
+        </button>
+    </div>
+    <div class="container">
+        <div class="menu">
+            <div class="logo">
+                San2dy Shop
+            </div>
+            <ul name="">
+
+            </ul>
+
+            <select id="types" class="" onchange="filterProduct(this)">
+                <option value="">Chọn sản phẩm</option>
+                <option value="Iphone">Iphone</option>
+                <option value="Samsung">Samsung</option>
+            </select>
+
+        </div>
+        <div class="center">
+            <h2 id="title-product">Tất cả sản phẩm</h2>
+            <div id="product" class="list">
+            </div>
+        </div>
+
+        <div id="myModal" class="modal">
+            <div id="cart">
+                <div class="name">
+                    Giỏ hàng
+                    <div onclick="closeCart()" class="close__cart">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                </div>
+
+                <div class="box-cart">
+                    <div id="list-cart"></div>
+                </div>
+
+                <div id="cart-footer">
+                    <div id="subtotal">
+                        Tổng: $0
+                    </div>
+                    <button onclick=" clearCart()" id="checkout" class="btn btn-warning">
+                        Thanh toán
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <script src="./js/controller.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
